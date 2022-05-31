@@ -27,8 +27,12 @@ db.on('error', () => console.log('mongo disconnected'));
 
 // === Index === //
 app.get('/writes', (req, res) => {
-    res.send('index');
-})
+    Write.find({}, (error, allWrites) => {
+        res.render('index.ejs', {
+            writes: allWrites,
+        });
+    });
+});
 
 
 // === New === //
@@ -38,7 +42,9 @@ app.get('/writes/new', (req, res) => {
 
 // === Create === //
 app.post('/writes', (req, res) => {
-    res.send(req.body);
+    Write.create(req.body, (error, createdWrite) => {
+        res.redirect('/writes');
+    })
 })
 
 
