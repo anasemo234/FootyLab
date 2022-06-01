@@ -8,8 +8,10 @@
 </head>
 <body>
     <h1>Edit Entry</h1>
+    <form action="/writes/<%=write._id%>?_method=PUT" method="POST">
     Title: <input type="text" name="title" value="<%=write.title%>">
     Entry: <textarea name="entry"  cols="30" rows="10" value="<%=write.entry%>"></textarea>
     <input type="submit" value="Save Changes">
+</form>
 </body>
 </html>

@@ -16,7 +16,8 @@ mongoose.connect(process.env.DATABASE_URL, {
 // === Middleware === //
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"))
-
+const writesController = require('./controllers/writes');
+app.use( '/writes', writesController);
 
 
 // === Database Connection === //
@@ -27,62 +28,6 @@ db.on('error', () => console.log('mongo disconnected'));
 
 
 
-// === Index === //
-app.get('/writes', (req, res) => {
-    Write.find({}, (error, allWrites) => {
-        res.render('index.ejs', {
-            writes: allWrites,
-        });
-    });
-});
-
-
-// === New === //
-app.get('/writes/new', (req, res) => {
-    res.render('new.ejs');
-});
-
-
-// === Delete === //
-app.delete('/writes/:id', (req, res) => {
-    Write.findByIdAndRemove(req.params.id, (err, data) => {
-        res.redirect('/writes')
-    })
-})
-
-
-// === Create === //
-app.post('/writes', (req, res) => {
-    Write.create(req.body, (error, createdWrite) => {
-        res.redirect('/writes');
-    });
-});
-
-
-
-
-// === Edit === //
-app.get('/writes/:id/edit', (req, res) => {
-    Write.findById(req.params.id, (error,  foundWrite) => {
-        res.render('edit.ejs', {
-            write: foundWrite,
-        })
-    })
-})
-
-
-
-
-
-
-// === Show === //
-app.get('/writes/:id', (req, res) => {
-    Write.findById(req.params.id, (err, foundWrite) => {
-        res.render('show.ejs', {
-            write: foundWrite,
-        })
-    })
-})
 
 
 
