@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const Write = require('./models/write');
+const methodOverride = require('method-override');
 require('dotenv').config();
 
 // === Database Connection === //
@@ -14,6 +15,7 @@ mongoose.connect(process.env.DATABASE_URL, {
 
 // === Middleware === //
 app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride("_method"))
 
 
 
@@ -40,12 +42,37 @@ app.get('/writes/new', (req, res) => {
     res.render('new.ejs');
 });
 
+
+// === Delete === //
+app.delete('/writes/:id', (req, res) => {
+    Write.findByIdAndRemove(req.params.id, (err, data) => {
+        res.redirect('/writes')
+    })
+})
+
+
 // === Create === //
 app.post('/writes', (req, res) => {
     Write.create(req.body, (error, createdWrite) => {
         res.redirect('/writes');
+    });
+});
+
+
+
+
+// === Edit === //
+app.get('/writes/:id/edit', (req, res) => {
+    Write.findById(req.params.id, (error,  foundWrite) => {
+        res.render('edit.ejs', {
+            write: foundWrite,
+        })
     })
 })
+
+
+
+
 
 
 // === Show === //
