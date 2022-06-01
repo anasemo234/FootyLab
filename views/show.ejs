@@ -8,13 +8,9 @@
 </head>
 <body>
     <nav>
-        <a href="/writes/new">Create a New Entry</a>
+        <a href="/writes"></a>
     </nav>
-    <h1>My Entrys</h1>
-    <ul>
-        <% writes.forEach(write => { %>
-            <li><a href="/writes/<%=write._id; %>"> <%=write.title; %></a></li>
-       <% }) %>
-    </ul>
+    <h1><%=write.title %></h1>
+    Entry: <%= write.entry%>
 </body>
 </html>

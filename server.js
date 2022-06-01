@@ -48,7 +48,14 @@ app.post('/writes', (req, res) => {
 })
 
 
-
+// === Show === //
+app.get('/writes/:id', (req, res) => {
+    Write.findById(req.params.id, (err, foundWrite) => {
+        res.render('show.ejs', {
+            write: foundWrite,
+        })
+    })
+})
 
 
 
