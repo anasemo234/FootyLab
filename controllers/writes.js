@@ -88,6 +88,18 @@ writeRouter.get('/:id', (req, res) => {
 })
 
 
+writeRouter.post('/:id/buy', (req, res) => {
+    Write.findById(req.params.id, (err, data) => {
+        if (data.qty <= 0) {
+            data.qty = 'OUT OF STOCK';
+        } else {
+            data.qty--;
+            data.save();
+        }
+        res.redirect(`/writes/${data.id}`);
+   });
+});
+
 
 
 module.exports = writeRouter;
