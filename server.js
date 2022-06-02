@@ -17,6 +17,8 @@ mongoose.connect(process.env.DATABASE_URL, {
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"))
 const writesController = require('./controllers/writes');
+const reviewsController = require('./controllers/reviews');
+app.use('/reviews', reviewsController);
 app.use( '/writes', writesController);
 
 
