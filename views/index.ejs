@@ -17,24 +17,19 @@
         </ul>
     </nav>
     <h1>FOOTY LAB</h1>
-    <div class="row">
-        <div class="column">
-    <div class="card">
-    
+<div class="container-fluid">
+    <div class="card-deck">
         <% writes.forEach(write => { %>
-           <a href="/writes/<%=write._id; %>"> <img src="<%=write.img %>" style="width: 100%"></a>
-            <h1><%=write.name; %></h1>
-                <p class="price">$<%=write.price; %></p>
-                <p><%=write.description; %></p>
-            
-            <!-- <form action="/writes/<%= write.id %>?_method=DELETE" method="POST">
-                <input type="submit" value="DELETE">
-            </form>
-            <a href="/writes/<%=write._id %>/edit">Edit</a> -->
-            
-            
-       <% }) %>
-    </div>
+        <div class="card">
+
+            <a href="/writes/<%=write._id; %>"> <img class="card-img-top" src="<%=write.img %>"></a>
+            <div class="card-body">
+                    <div class="h2 text-center"><%=write.name; %></div>
+                    <div class="lead text-center text-muted"><em>$<%=write.price; %></em></div>
+                    <div class="lead text-center"><%=write.description; %></div>
+            </div>
+        </div>
+          <% }) %>
     </div>
 </div>
 </body>
