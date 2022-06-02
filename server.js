@@ -20,6 +20,7 @@ const writesController = require('./controllers/writes');
 const reviewsController = require('./controllers/reviews');
 app.use('/reviews', reviewsController);
 app.use( '/writes', writesController);
+app.use('/public', express.static("public"));
 
 
 // === Database Connection === //
