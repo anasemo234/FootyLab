@@ -1,72 +1,4 @@
-/* .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
-    margin: auto;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-}
 
-.price {
-    color: grey;
-    font-size: 22px;
-}
-
-.column {
-  float: left;
-  width: 25%;
-  padding: 0 10px;
-} */
-
-/* Remove extra left and right margins, due to padding in columns */
-/* .row {margin: 0 -5px;}
-
-.row {
-     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-} */
-
-/* Clear floats after the columns */
-/* .row:after {
-  content: "";
-  display: table;
-  clear: both;
-} */
-
-/* Style the counter cards */
-/* .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);         this adds the "card" effect */
-  /* padding: 16px;
-  text-align: center;
-  background-color: #f1f1f1;
-} */
-
-/* Responsive columns - one column layout (vertical) on small screens */
-/* @media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-    display: block;
-    margin-bottom: 20px;
-  }
-} */
-
-/* ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    background-color: #333;
-} */
- 
-/* .nav {
-    display: inline;
-
-} */
-
-/* a { */
-    /* display: block; */
-    /* padding: 8px;
-    background-color: #dddddd;
-} */
 body {
   background-color: #e5eafa;
 }
@@ -138,4 +70,29 @@ img {
 
 h1 {
     text-align: center;
+}
+
+li {
+    list-style: none;
+    display: inline-block;
+    padding: 0px 20px;
+    justify-content: space-between;
+    font-size: 25px;
+
+}
+
+.nav-links .nav li a {
+    transition: all 0.3s ease 0s;
+    color: #12232e;
+    text-decoration: none;
+}
+
+.nav-links .nav li a:hover {
+    color: aquamarine;
+}
+
+header {
+    background-color: #e5eafa;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, .3);
 }
