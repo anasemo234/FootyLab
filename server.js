@@ -27,6 +27,10 @@ db.on('connected', () => console.log('mongo connected'));
 db.on('error', () => console.log('mongo disconnected'));
 
 
+// app.get('/', (req, res) => {
+//     res.render('index.ejs');
+// });
+
 
 
 

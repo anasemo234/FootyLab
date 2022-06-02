@@ -5,7 +5,7 @@ const writeRouter = express.Router();
 const Write = require('../models/write');
 const writeSeed = require('../models/writeSeed');
 
-
+// === Seed === //
 writeRouter.get('/seed', (req, res) => {
     Write.deleteMany({}, (error, allWrites) => {});
     Write.create(writeSeed, (error, data) => {
@@ -87,7 +87,7 @@ writeRouter.get('/:id', (req, res) => {
     })
 })
 
-
+// === quantity === //
 writeRouter.post('/:id/buy', (req, res) => {
     Write.findById(req.params.id, (err, data) => {
         if (data.qty <= 0) {
