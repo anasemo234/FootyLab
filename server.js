@@ -8,7 +8,7 @@ require('dotenv').config();
 
 // === Database Connection === //
 mongoose.connect(process.env.DATABASE_URL, {
-    useNewUrlParser: true,
+    // useNewUrlParser: true,
     useUnifiedTopology: true
 });
 

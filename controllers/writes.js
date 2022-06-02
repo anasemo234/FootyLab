@@ -1,7 +1,18 @@
 const express = require('express');
 const req = require('express/lib/request');
+const { append } = require('express/lib/response');
 const writeRouter = express.Router();
 const Write = require('../models/write');
+const writeSeed = require('../models/writeSeed');
+
+
+writeRouter.get('/seed', (req, res) => {
+    Write.deleteMany({}, (error, allWrites) => {});
+    Write.create(writeSeed, (error, data) => {
+        res.redirect('/writes')
+    })
+})
+
 
 // === Index === //
 writeRouter.get('/', (req, res) => {

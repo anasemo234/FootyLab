@@ -1,8 +1,11 @@
 const mongoose = require('mongoose');
 
 const writeSchema = new mongoose.Schema({
-    title: {type: String},
-    entry: {type: String}
+    name: {type: String, required: true},
+    description: String,
+    img:  String,
+    price: {type: Number, minimum: 0},
+    qty: {type: Number, minimun: 0}
 });
 
 

@@ -9,8 +9,11 @@
 <body>
     <h1>Edit Entry</h1>
     <form action="/writes/<%=write._id%>?_method=PUT" method="POST">
-    Title: <input type="text" name="title" value="<%=write.title%>">
-    Entry: <textarea name="entry"  cols="30" rows="10" value="<%=write.entry%>"></textarea>
+    Name: <input type="text" name="name" value="<%=write.name%>" placeholder="id">
+    Description: <input type="text" name="description" value="<%=write.description%>" placeholder="id">
+    Image: <input type="text" name="img" value="<%=write.img%>" placeholder="id">
+    Price: <input type="number" name="" value="<%=write.price%>" placeholder="id">
+    Quantity: <input type="number" name="" value="<%=write.quantity%>" placeholder="id">
     <input type="submit" value="Save Changes">
 </form>
 </body>

@@ -10,8 +10,12 @@
     <nav>
         <a href="/writes"></a>
     </nav>
-    <h1><%=write.title %></h1>
-    Entry:
-    <p><%= write.entry%></p> 
+    <h1><%=write.name %></h1>
+    <br />
+    <img src="<%=write.img %>">
+    <h4>Price: $<%= write.price%></h4> <br/>
+    Quantity: <%= write.qty%> <br/>
+    Description:
+    <p><%= write.description%></p> 
 </body>
 </html>
