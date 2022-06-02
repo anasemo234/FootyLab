@@ -26,11 +26,8 @@
     <form action="/writes/<%=write._id%>/buy" method="POST">
         <input type="submit" value="buy">
     </form>
+    <br/>
 
-    <form action="/:id<%=write._id%>?_method=PUT" method="PUT">
-       Write a review:
-        <textarea name="reviews"  cols="30" rows="10"></textarea> <br/>
-        <input type="submit" value="Submit">
-    </form>
+    <a href="/reviews"><button>Write Review?</button></a>
 </body>
 </html>
