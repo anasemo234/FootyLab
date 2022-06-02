@@ -8,13 +8,24 @@
 </head>
 <body>
     <h1>Reviews</h1>
-    <nav>
-        <ul>
-            <li>
-                <a href="/reviews/new">Write New Review</a>
-            </li>
-        </ul>
-    </nav>
+    <main>
+        <form action="/reviews" method="POST">
+            <label for="items">Choose a product</label>
+            <select name="items" id="items">
+                <option value="read madrid">Real Madrid</option>
+                <option value="chelsea">Chelsea</option>
+                <option value="inter milan">Inter Milan</option>
+                <option value="barcelona">Barcelona</option>
+                <option value="manchester united">Manchester United</option>
+                <option value="juventus">Juventus</option>
+                <option value="other">Other</option>
+            </select> <br/>
+            Name: <input type="text" name="name" > <br/>
+            Review: <textarea name="review" cols="30" rows="10"></textarea>
+            <input type="submit" value="Submit">
+
+        </form>
+    </main>
     <main>
         <h2>All Reviews</h2>
         <ul>

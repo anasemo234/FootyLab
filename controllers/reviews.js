@@ -11,5 +11,11 @@ reviewRouter.get('/', (req, res) => {
 });
 
 
+reviewRouter.post('/', (req, res) => {
+    Review.create(req.body, (err, createReview) => {
+        res.redirect('/reviews');
+    });
+});
+  
 
 module.exports = reviewRouter;
