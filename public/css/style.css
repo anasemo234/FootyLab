@@ -96,3 +96,8 @@ header {
     text-align: center;
     border: 1px solid rgba(0, 0, 0, .3);
 }
+
+.allLinks {
+    text-decoration: none;
+    color: #12232e;
+}

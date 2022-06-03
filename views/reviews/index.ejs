@@ -73,7 +73,7 @@
                 <input type="radio" id="star1" name="rate" value="1" />
                 <label for="star1" title="text">1 star</label>
               </span> <br/> -->
-            Review: <textarea name="review" cols="30" rows="10"></textarea>
+            Review: <textarea name="body" cols="30" rows="10"></textarea>
             <input type="submit" value="Submit">
 
         </form>
@@ -83,8 +83,8 @@
         
             <% for(let i = 0; i < reviews.length; i++) { %>
 
-                       <h3><%= reviews[i].name %></h3>
-                      <p><%= reviews.body %></p> 
+                       <h4><%= reviews[i].name %></h4>
+                      <p><%= reviews[i].body %></p> 
                     
           <% } %>
         

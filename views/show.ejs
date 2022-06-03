@@ -4,11 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="/public/css/style.css"> -->
+    <style>
+        body {
+            background-color:  #e5eafa;
+        }
+        img {
+            width: 250px;
+        }
+
+        .info {
+            background-color: #12232e;
+            width: 50%;
+            height: 100%;
+            padding: 25px;
+            position: relative;
+            color: #eefbfb;
+            font-size: 1.5rem;
+        }
+        p {
+            color: #eefbfb;
+            
+        }
+    </style>
     <title>Document</title>
 </head>
 <body>
     <nav>
-        <a href="/writes"></a>
+        <a href="/writes">Home</a>
     </nav>
     <h1><%=write.name %></h1>
     <br />
@@ -19,12 +42,10 @@
         <p>OUT OF STOCK</p>
     <% } else { %>
         <%= write.qty %>
-    <% } %>
-    Description:
-    <p><%= write.description%></p> 
-
+    <% } %> <br/>
+    <br/>
     <form action="/writes/<%=write._id%>/buy" method="POST">
-        <input type="submit" value="buy">
+        <input type="submit" value="Buy">
     </form>
     <br/>
 
@@ -33,5 +54,13 @@
         <input type="submit" value="DELETE">
     </form>
     <a href="/writes/<%=write._id %>/edit">Edit</a>
+    <div class="info">
+   
+    <p class="item"> Description: <hr>
+        <%= write.description%> 
+    </p>  <hr>
+
+   
+</div>
 </body>
 </html>

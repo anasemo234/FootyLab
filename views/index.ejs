@@ -14,9 +14,9 @@
     <nav>
 
         <ul class="nav-links">
-            <li class="nav"><a href="/writes">Home</a></li>
-            <li class="nav"><a href="/writes/new">Sell</a></li>
-            <li class="nav"><a href="/reviews">Reviews</a></li>
+            <li class="nav"><a class="allLinks" href="/writes">Home</a></li>
+            <li class="nav"><a class="allLinks" href="/writes/new">Sell</a></li>
+            <li class="nav"><a class="allLinks" href="/reviews">Reviews</a></li>
         </ul>
     </nav>
 </header>
@@ -30,7 +30,7 @@
             <div class="card-body">
                     <div class="h2 text-center"><%=write.name; %></div>
                     <div class="lead text-center text-muted"><em>$<%=write.price; %></em></div>
-                    <div class="lead text-center"><%=write.description; %></div>
+                    <!-- <div class="lead text-center"><%=write.description; %></div> -->
             </div>
         </div>
           <% }) %>
