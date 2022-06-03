@@ -9,34 +9,60 @@
         body {
             background-color:  #e5eafa;
         }
-        img {
-            width: 250px;
+        .pic img {
+            width: 800px;
+            height: 800px;
+            position: absolute
         }
+
+      
 
         .info {
             background-color: #12232e;
             width: 50%;
             height: 100%;
-            padding: 25px;
+            padding: 10px;
             position: relative;
             color: #eefbfb;
-            font-size: 1.5rem;
+            font-size: 25px;
         }
         p {
             color: #eefbfb;
             
         }
+
+        .container {
+            text-align: center;
+        }
+
+        .info {
+            width: 50%;
+            border-radius: 10px 10px 10px 10px;
+            padding: 20px;
+            height: 100%;
+           float: right;
+
+        }
     </style>
     <title>Document</title>
 </head>
 <body>
-    <nav>
+    <nav class="home">
         <a href="/writes">Home</a>
+        <a href="/reviews">Reviews</a>
     </nav>
+    <!-- <div class="container"> -->
     <h1><%=write.name %></h1>
     <br />
+    <div class="pic">
     <img src="<%=write.img %>">
-    <h4>Price: $<%= write.price%></h4> <br/>
+</div>
+    <div class="info">
+        <p class="item"> Description: <hr>
+            <%= write.description%> 
+        </p>  <hr>
+
+    <h4>Price: $<%= write.price%></h4> 
     Quantity: 
     <% if (write.qty <= 0) { %>
         <p>OUT OF STOCK</p>
@@ -54,13 +80,12 @@
         <input type="submit" value="DELETE">
     </form>
     <a href="/writes/<%=write._id %>/edit">Edit</a>
-    <div class="info">
+    
    
-    <p class="item"> Description: <hr>
-        <%= write.description%> 
-    </p>  <hr>
+  
 
-   
+</div>
+</div>
 </div>
 </body>
 </html>
