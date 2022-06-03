@@ -2,8 +2,9 @@
 
 This app is a football jersey online store. Come shop and pick out what you like!!
 * AAU - Should be able to add a product to sell
-     * - Able to edit your product
-      * - write reviews on products
+* - Able to edit your product
+* - write reviews on products
+     
       
 
 ## Technologies Used
