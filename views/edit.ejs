@@ -30,11 +30,40 @@
             height: 100%;
             word-spacing: 2px;
             line-height: 1.5em;
-            
         }
+
+        .home {
+        text-align: center;
+        font-size: large;
+        border-bottom: 2px solid black;
+        padding-bottom: 10px;
+        padding-top: 10px;
+}
+
+.edit {
+    color: #eefbfb;
+    text-decoration: none
+}
+
+.allLinks{
+    text-decoration: none;
+    margin: 40px;
+    color: #12232e;
+    font-size: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.3s ease 0s;
+}
+.allLinks:hover {
+    color: #0088a9;
+}
     </style>
 </head>
 <body>
+    <nav class="home">
+        <a class="allLinks" href="/writes">Home</a>
+        <a class="allLinks" href="/writes/new">Sell</a>
+        <a class="allLinks" href="/reviews">Reviews</a>
+    </nav>
     <h1>Edit Item</h1>
     
     <form action="/writes/<%=write._id%>?_method=PUT" method="POST">
