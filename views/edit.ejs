@@ -5,16 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+
+        fieldset {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        input {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid rgb(229, 228, 228);
+            border-radius: 5px;
+        }
+
+        .item-info {
+            width: 25%;
+            border-radius: 10px 10px 10px 10px;
+            padding: 20px;
+            height: 100%;
+            word-spacing: 2px;
+            line-height: 1.5em;
+            
+        }
+    </style>
 </head>
 <body>
-    <h1>Edit Entry</h1>
+    <h1>Edit Item</h1>
+    
     <form action="/writes/<%=write._id%>?_method=PUT" method="POST">
+        <fieldset class="item-info">
     Name: <input type="text" name="name" value="<%=write.name%>" placeholder="id">
     Description: <input type="text" name="description" value="<%=write.description%>" placeholder="id">
     Image: <input type="text" name="img" value="<%=write.img%>" placeholder="id">
-    Price: <input type="number" name="" value="<%=write.price%>" placeholder="id">
-    Quantity: <input type="number" name="" value="<%=write.quantity%>" placeholder="id">
+    Price: <input type="number" name="price" value="<%=write.price%>" placeholder="id">
+    Quantity: <input type="number" name="quantity" value="<%=write.quantity%>" placeholder="id">
     <input type="submit" value="Save Changes">
+</fieldset>
 </form>
+
 </body>
 </html>
