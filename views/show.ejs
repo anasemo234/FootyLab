@@ -29,6 +29,7 @@
         p {
             color: #eefbfb;
             
+            
         }
 
         .container {
@@ -40,16 +41,71 @@
             border-radius: 10px 10px 10px 10px;
             padding: 20px;
             height: 100%;
-           float: right;
-
+            float: right;
+            word-spacing: 2px;
+            line-height: 1.5em;
         }
+
+        h1 {
+            margin-left: 10em;
+        }
+
+         .home {
+            padding: 5px;
+            margin-top: 10px;
+        }
+
+        .btn {
+            font-size: 20px;
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+        button {
+            /* border: 3px solid black; */
+            border: 2px;
+            
+        }
+
+        .btn:hover {
+            color: white;
+            background-color: #4CAF50;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .btn:active {
+            background-color: black;
+        }
+        .price {
+            font-weight: bolder;
+            text-decoration:  underline whitesmoke;
+        }
+
+        .home {
+        text-align: center;
+        font-size: large;
+        border-bottom: 2px solid black;
+        padding-bottom: 10px;
+        padding-top: 10px;
+}
+
+.allLinks{
+    text-decoration: none;
+    margin: 40px;
+    color: #12232e;
+    font-size: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.3s ease 0s;
+}
+.allLinks:hover {
+    color: #0088a9;
+}
     </style>
     <title>Document</title>
 </head>
 <body>
     <nav class="home">
-        <a href="/writes">Home</a>
-        <a href="/reviews">Reviews</a>
+        <a class="allLinks" href="/writes">Home</a>
+        <a class="allLinks" href="/reviews">Reviews</a>
     </nav>
     <!-- <div class="container"> -->
     <h1><%=write.name %></h1>
@@ -62,7 +118,7 @@
             <%= write.description%> 
         </p>  <hr>
 
-    <h4>Price: $<%= write.price%></h4> 
+    <h4 class="price">Price: $<%= write.price%></h4> 
     Quantity: 
     <% if (write.qty <= 0) { %>
         <p>OUT OF STOCK</p>
@@ -71,7 +127,7 @@
     <% } %> <br/>
     <br/>
     <form action="/writes/<%=write._id%>/buy" method="POST">
-        <input type="submit" value="Buy">
+        <button type="submit" class="btn btn-outline-dark" value="Buy">ADD TO BAG</button>
     </form>
     <br/>
 
