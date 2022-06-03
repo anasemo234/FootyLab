@@ -6,8 +6,10 @@ const Write = require('./models/write');
 const methodOverride = require('method-override');
 require('dotenv').config();
 
+
+const MONGODB_URI = process.env.MONGODB_URI
 // === Database Connection === //
-mongoose.connect(process.env.DATABASE_URL, {
+mongoose.connect(process.env.MONGODB_URI, {
     // useNewUrlParser: true,
     useUnifiedTopology: true
 });
