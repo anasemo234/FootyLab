@@ -34,5 +34,6 @@ Once deployed simply browse the store and see if anything reels you in!
 * add user authentication 
 * adding a checkout funcionality
 * save/like items
+* add the functionslity to rate specfic products
 
 
